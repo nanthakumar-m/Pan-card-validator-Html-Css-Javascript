@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAN Card Validator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: calc(100% - 22px);
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #28a745;
+        color: white;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #218838;
+      }
+
+      .result {
+        margin-top: 10px;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Check if the PAN card number is valid or not</h2>
+      <form onsubmit="return validatePan()">
+        <label for="pan">PAN Card:</label>
+        <input type="text" id="pan" placeholder="Enter PAN number" />
+        <input type="submit" value="Submit" />
+        <div id="result" class="result"></div>
+      </form>
+    </div>
+
+    <script>
+      function validatePan() {
+        const pan = document.getElementById("pan").value;
+        const result = document.getElementById("result");
+        const panPattern = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+
+        if (panPattern.test(pan)) {
+          result.textContent = "Valid PAN Number";
+          result.style.color = "green";
+        } else {
+          result.textContent = "Invalid PAN Number";
+          result.style.color = "red";
+        }
+
+        return false; // Prevent form submission
+      }
+    </script>
+  </body>
+</html>
