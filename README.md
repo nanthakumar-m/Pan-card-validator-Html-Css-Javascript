@@ -4,7 +4,7 @@ This PAN Card Validator is a web-based tool that checks whether a given PAN (Per
 
 The primary goal of this project was to understand and implement form validation, work with regular expressions (RegEx), and improve user input handling.
 
-Click here to the live demo  --> https://nanthakumar-m.github.io/Pan-card-validator-Html-Css-Javascript/index2.html
+🔗👉Click here to the live demo  --> https://nanthakumar-m.github.io/Pan-card-validator-Html-Css-Javascript/index2.html
 
 ## ⚙️ Technologies Used
 
